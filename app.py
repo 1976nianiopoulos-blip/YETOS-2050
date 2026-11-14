@@ -11,6 +11,10 @@ import json
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from rotation_catalog import (
+    CROPS, ROTATIONS, HISTORY_CHOICES,
+    SOURCES, timeline, crop_history_gate,
+)
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data" / "processed"
@@ -168,10 +172,11 @@ with st.sidebar:
     )
 
 
-tab1, tab2, tab3 = st.tabs([
+tab1, tab2, tab3, tab4 = st.tabs([
     "Evidence Passport",
     "Same Rain. Different Soil.",
     "Drought Shock S3",
+    "Rotation Explorer R1-R3",
 ])
 
 
@@ -518,3 +523,126 @@ st.download_button(
     file_name=CSV.name,
     mime="text/csv",
 )
+
+
+# Rotation Explorer: planning catalog, not crop simulation.
+with tab4:
+    st.header("R1-R3 Rotation Explorer")
+    st.write(
+        "Three-crop rotation sequences displayed over a "
+        "36-month planning horizon."
+    )
+    st.info(
+        "Catalog only. No yield simulation. "
+        "No optimal-rotation ranking. No crop-specific ETc. "
+        "The 2023 water-balance results are NOT a "
+        "2027-2029 crop simulation."
+    )
+
+    rotation_id = st.selectbox(
+        "Candidate rotation",
+        options=list(ROTATIONS),
+        format_func=lambda r: r + " - " + " -> ".join(
+            CROPS[c]["label"] for c in ROTATIONS[r]
+        ),
+        key="rotation_catalog_id",
+    )
+
+    first_year = st.selectbox(
+        "First planned harvest year",
+        options=list(range(2027, 2033)),
+        key="rotation_catalog_start_year",
+    )
+
+    sequence = ROTATIONS[rotation_id]
+    columns = st.columns(3)
+    for position, crop_id in enumerate(sequence):
+        with columns[position]:
+            st.markdown(f"**Harvest year {position + 1}**")
+            st.write(CROPS[crop_id]["label"])
+            st.caption(
+                "Target harvest year only; "
+                "not confirmed field occupancy."
+            )
+
+    st.subheader("Field-history evidence gate")
+    osr_history = st.selectbox(
+        "Previous five years: oilseed rape",
+        options=HISTORY_CHOICES,
+        disabled="OSR_W" not in sequence,
+        key="rotation_history_osr",
+    )
+    faba_history = st.selectbox(
+        "Previous five years: faba beans",
+        options=HISTORY_CHOICES,
+        disabled="FABA_S" not in sequence,
+        key="rotation_history_faba",
+    )
+
+    gate, explanation = crop_history_gate(
+        rotation_id, osr_history, faba_history
+    )
+
+    if gate == "PROJECT PRECONDITION NOT MET":
+        st.error(f"{gate}: {explanation}")
+    elif gate == "EVIDENCE REQUIRED":
+        st.warning(f"{gate}: {explanation}")
+    else:
+        st.info(f"{gate}: {explanation}")
+
+    st.caption(
+        "Five-year spacing is a conservative project "
+        "precondition; this check does not establish "
+        "overall rotation feasibility."
+    )
+
+    st.subheader("36-month planning calendar")
+    st.dataframe(
+        pd.DataFrame(timeline(rotation_id, first_year)),
+        hide_index=True,
+        use_container_width=True,
+    )
+
+    if CROPS[sequence[0]]["season"] == "winter":
+        st.warning(
+            "The first winter crop normally requires "
+            "sowing before January of the first planning "
+            "year. That pre-horizon establishment is not "
+            "shown as a scheduled operation."
+        )
+
+    st.warning(
+        "Harvest dates, field-specific establishment "
+        "windows, crop rooting, Kc and yield are "
+        "NOT validated here. Crop-specific water "
+        "comparisons remain Evidence Required."
+    )
+
+    with st.expander("Assumptions & Teagasc sources"):
+        st.write(
+            "Month labels are approximate sowing-window "
+            "indicators, not verified dates for an Irish field."
+        )
+        st.write(
+            "A planned harvest-year crop shown for 12 "
+            "months does NOT mean the field is occupied "
+            "by that crop for all 12 months."
+        )
+        for crop_id in dict.fromkeys(sequence):
+            crop = CROPS[crop_id]
+            st.markdown(
+                f"- **{crop['label']}**: {crop['window']}. "
+                f"[Teagasc reference]({crop['source']})"
+            )
+        st.markdown(
+            "[Teagasc ? oilseed rape rotation guidance]"
+            f"({SOURCES['osr_history']})"
+        )
+        st.markdown(
+            "[Teagasc ? spring beans and five-year break]"
+            f"({SOURCES['spring_faba']})"
+        )
+        st.write(
+            "Unknown dates and parameters are left "
+            "unquantified. R1-R3 are not ranked."
+        )
