@@ -8,3 +8,7 @@
 - 2026-11-14T16:08:34+02:00 | NASA-POWER-ET0-2023-QA-001: Nine variables, 365 days each, basic QA PASS. Hydrology methodology decisions recorded. ET0 implementation and field validation pending.
 
 - 2026-11-14T16:57:13+02:00 | ET0-DECISIONS-2023-H12-H14: Radiation sensitivity evaluated; A10 inputs derived; decisions H12-H14 documented. Field validation pending.
+
+- 2026-11-14 | Chronological project summary: BUILD_TIMELINE_2026-11-14.md (Git timestamps retained).
+
+- 2026-11-14 | WB-2023-SENSITIVITY-RESULTS: 1460 daily rows; A08 PASS; WB_2023_RESULTS.md; not field validated.

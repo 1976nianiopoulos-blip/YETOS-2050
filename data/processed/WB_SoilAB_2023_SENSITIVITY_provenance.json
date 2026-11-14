@@ -1,0 +1,95 @@
+{
+  "project": "YETOS 2050",
+  "status": "ILLUSTRATIVE SENSITIVITY - NOT VALIDATED",
+  "generated_utc": "2026-11-14T15:18:44.951268+00:00",
+  "input_sha256": "03efb01ea1e2cf7c52e4d000907a954a45b833fb646259d6bfef1188b436d25f",
+  "output_sha256": "fc598cff35c1847e1dfbdf3acc721a2c7a63f2e389660a8ba509aeb22dc3114b",
+  "model_code_sha256": "ae0d678549e229ef024dd64a05d0deaab1696f0881f6c09b6d37996e1486366c",
+  "rows": 1460,
+  "soils": {
+    "Soil_A": {
+      "WP": 60.0,
+      "FC": 120.0,
+      "SAT": 240.0,
+      "daily_input_cap": 40.0,
+      "drainage_rate": 50.0
+    },
+    "Soil_B": {
+      "WP": 110.0,
+      "FC": 200.0,
+      "SAT": 280.0,
+      "daily_input_cap": 15.0,
+      "drainage_rate": 5.0
+    }
+  },
+  "soil_A03": "BLOCKED",
+  "initial_storage": "Each soil starts at its own FC",
+  "scenarios": {
+    "Baseline": "NASA POWER 2023 gridded precipitation",
+    "S3_drought": "Synthetic zero precipitation from 2023-07-01 through 2023-08-31"
+  },
+  "irrigation": "Zero in both scenarios",
+  "stress_proxy": "FAO56-shaped Ks with assumed p=0.5; not calibrated for a real crop",
+  "ET_proxy": "Ks times nonnegative reference ET0, capped by illustrative available storage. Not crop-specific ETc.",
+  "drainage_proxy": "Illustrative drainage-rate response above field capacity",
+  "unretained_water": "Daily input-cap plus saturation excess. NOT measured or physically validated runoff.",
+  "daily_input_cap": "Illustrative mm/day parameter, NOT measured infiltration capacity",
+  "dew": "Not quantified or added",
+  "mass_balance": "Daily and annual A08 checks passed",
+  "comparison": "Same meteorological inputs, different assumed soils",
+  "summaries": [
+    {
+      "soil": "Soil_A",
+      "scenario": "Baseline",
+      "P_mm": 1592.6500000000003,
+      "ET_ref_stressed_mm": 476.5292488174319,
+      "drainage_proxy_mm": 926.9009022733168,
+      "unretained_water_mm": 176.49,
+      "delta_storage_mm": 12.729848909251501,
+      "minimum_storage_mm": 64.23664050788253,
+      "n_ref_stress_days": 37,
+      "max_daily_residual_mm": 4.263256414560601e-14,
+      "annual_residual_mm": 1.9895196601282805e-13
+    },
+    {
+      "soil": "Soil_A",
+      "scenario": "S3_drought",
+      "P_mm": 1334.6400000000008,
+      "ET_ref_stressed_mm": 329.10234558836544,
+      "drainage_proxy_mm": 816.3178055023831,
+      "unretained_water_mm": 176.49,
+      "delta_storage_mm": 12.729848909251501,
+      "minimum_storage_mm": 60.15293625231344,
+      "n_ref_stress_days": 108,
+      "max_daily_residual_mm": 4.263256414560601e-14,
+      "annual_residual_mm": 6.536993168992922e-13
+    },
+    {
+      "soil": "Soil_B",
+      "scenario": "Baseline",
+      "P_mm": 1592.6500000000003,
+      "ET_ref_stressed_mm": 505.0572173079453,
+      "drainage_proxy_mm": 660.3351820318331,
+      "unretained_water_mm": 352.60110566022155,
+      "delta_storage_mm": 74.656495,
+      "minimum_storage_mm": 132.81998186028835,
+      "n_ref_stress_days": 32,
+      "max_daily_residual_mm": 4.984901380566953e-14,
+      "annual_residual_mm": 4.547473508864641e-13
+    },
+    {
+      "soil": "Soil_B",
+      "scenario": "S3_drought",
+      "P_mm": 1334.6400000000008,
+      "ET_ref_stressed_mm": 369.16528470543125,
+      "drainage_proxy_mm": 564.1053112025384,
+      "unretained_water_mm": 326.71290909203,
+      "delta_storage_mm": 74.656495,
+      "minimum_storage_mm": 111.3648399188024,
+      "n_ref_stress_days": 107,
+      "max_daily_residual_mm": 4.551914400963142e-14,
+      "annual_residual_mm": 1.1368683772161603e-12
+    }
+  ],
+  "warning": "Scenario sensitivity only. No local soil calibration, no crop Kc, no field validation."
+}
