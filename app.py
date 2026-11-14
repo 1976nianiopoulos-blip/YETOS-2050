@@ -11,6 +11,7 @@ import json
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+from s1_streamlit_view import render_s1
 from rotation_catalog import (
     CROPS, ROTATIONS, HISTORY_CHOICES,
     SOURCES, timeline, crop_history_gate,
@@ -172,11 +173,12 @@ with st.sidebar:
     )
 
 
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Evidence Passport",
     "Same Rain. Different Soil.",
     "Drought Shock S3",
     "Rotation Explorer R1-R3",
+    "Irrigation Shock S1",
 ])
 
 
@@ -646,3 +648,8 @@ with tab4:
             "Unknown dates and parameters are left "
             "unquantified. R1-R3 are not ranked."
         )
+
+
+# Independent S1 view; archive unchanged.
+with tab5:
+    render_s1()
