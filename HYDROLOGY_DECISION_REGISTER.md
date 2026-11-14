@@ -157,3 +157,64 @@ This is meteorological INPUT QA, not field validation.
 3. Run baseline and one separate shock.
 4. Add evidence labels and a Streamlit interface.
 5. Complete documentation, GitHub and submission.
+
+
+## H12 - Negative ET0 treatment - A10
+
+Problem: 7 negative calculated daily ET0 values.
+Evidence: 0.419944 mm of negative values in 2023.
+
+Decision: ET0_for_water_balance = max(0, ET0_raw).
+Original ET0 must remain unchanged.
+
+Reason: No unmeasured dew or condensation can be
+credited as a water input to the soil root zone.
+
+Annual nonnegative reference demand: 523.1043 mm.
+Negative-day share: 1.9178%.
+Clipping share: 0.0803%.
+YETOS internal classification: MINOR_ANNUAL_CLIPPING_IMPACT.
+
+The 2% and 1% QA thresholds are internal, not FAO.
+This is reference demand, not crop-specific ETc.
+No crop Kc has been applied.
+
+## H13 - Radiation cloud-factor sensitivity
+
+Problem: Original ET0 calculation lacks the ASCE-EWRI
+lower floor Rs/Rso = 0.30 for the cloud factor.
+
+Evidence: 32 days below 0.30; 23 days with negative
+unbounded cloud factors.
+
+Original annual ET0: 522.6844 mm.
+ASCE-style floor sensitivity: 520.4711 mm.
+Annual difference: -2.2133 mm.
+
+Decision: Retain original ET0 and provide a separate
+ASCE-style radiation-floor sensitivity series.
+This changes one radiation term only; it is not a
+claim of full ASCE-standardized model implementation.
+
+Source: ASCE-EWRI (2005), Eq. 18, page 20.
+No measured net radiation validation performed.
+
+## H14 - Independent Irish validation protocol
+
+Problem: Successful code QA does not establish local
+meteorological or soil-model accuracy.
+
+Decision: Treat NASA POWER as unvalidated gridded data
+for exploratory scenario analysis.
+
+Proposed primary comparison: Met Eireann Shannon Airport.
+Secondary cross-regional check: Moore Park, County Cork.
+
+Compare overlapping dates and compatible definitions
+for rainfall, temperature, wind and ET0.
+Report bias, MAE, RMSE and seasonal differences.
+Do not claim comparisons have already been completed.
+
+No imported regional bias correction, unsupported crop
+yield ranking, field runoff prediction or operational advice.
+A03 remains BLOCKED. A08 and A10 remain mandatory.

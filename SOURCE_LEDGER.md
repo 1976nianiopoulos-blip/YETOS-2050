@@ -103,3 +103,23 @@ Limitations:
 - ET0 computation not yet implemented.
 - More detailed physical consistency QA pending.
 - A03 BLOCKED; A08 and A10 mandatory.
+
+
+## ET0-DECISIONS-2023-H12-H14
+
+2023 NASA POWER FAO-56 ET0: annual raw 522.6844 mm.
+Negative ET0 days: 7; raw clipping 0.419944 mm.
+Nonnegative reference demand: 523.1043 mm.
+
+NASA GeoJSON elevation: 100.48 m, gridded metadata,
+not an Elton field elevation measurement.
+
+ASCE-style radiation-floor sensitivity:
+520.4711 mm/year, difference -2.2133 mm.
+32 days Rs/Rso below 0.30; 23 negative cloud factors.
+ASCE-EWRI 2005, Eq. 18, p. 20.
+
+Original input ET0 SHA256: 145bef2395944ebcc1ffba16246f6cc8ac5e05d03e9c25fe6065f16450ef476b.
+Derived input status: EXPLORATORY, NOT FIELD VALIDATED.
+Shannon/Moore Park comparison: PLANNED, NOT PERFORMED.
+See HYDROLOGY_DECISION_REGISTER.md H12-H14.
