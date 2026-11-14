@@ -1,0 +1,9 @@
+{
+  "source": "NASA POWER Daily Point API",
+  "retrieved_utc": "2026-11-14T12:15:56.884797+00:00",
+  "request_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CPRECTOTCORR&community=AG&latitude=52.6638&longitude=-8.6267&start=20230101&end=20231231&format=JSON&time-standard=UTC",
+  "raw_filename": "NASA_POWER_Limerick_2023_UTC.json",
+  "sha256": "1b1f58d7729cf342d52541084eb4e963f75417718658a54de3cd4c0ef0aad4cf",
+  "validation_status": "PENDING",
+  "location_status": "Reference point, not field measurement"
+}

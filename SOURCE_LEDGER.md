@@ -51,3 +51,33 @@ Scientific limitations:
 - No water-balance simulation has been performed.
 - A03 remains BLOCKED.
 - A08 and A10 remain mandatory scientific gates.
+
+## NASA-POWER-2023-QA-001
+
+Status: BASIC QA PASSED.
+Source: NASA POWER Daily Point API.
+Retrieved UTC: 2026-11-14T12:15:56.884797+00:00
+Location: Limerick City reference point.
+Period: 2023-01-01 to 2023-12-31.
+Time standard: UTC.
+
+T2M: 365 daily records, 0 missing, units C.
+PRECTOTCORR: 365 daily records, 0 missing, units mm/day.
+
+Annual precipitation total: 1592.65 mm.
+Annual mean temperature: 10.67 C.
+
+SHA256: 1b1f58d7729cf342d52541084eb4e963f75417718658a54de3cd4c0ef0aad4cf
+SHA256 verification: PASS.
+Daily date coverage: PASS.
+Basic numerical checks: PASS.
+
+Limitations:
+- No independent station cross-validation yet.
+- Not a measurement at an actual field parcel.
+- Exact spatial resolution pending verification.
+- Soil parameters not derived from NASA POWER.
+- No hydrological simulation completed.
+- A03 remains BLOCKED.
+- A08 and A10 remain mandatory.
+
