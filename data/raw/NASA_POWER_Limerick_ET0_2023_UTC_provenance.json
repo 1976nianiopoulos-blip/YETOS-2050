@@ -1,0 +1,8 @@
+{
+  "source": "NASA POWER Daily Point API",
+  "retrieved_utc": "2026-11-14T14:00:31.822309+00:00",
+  "request_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M%2CT2M_MAX%2CT2M_MIN%2CT2MDEW%2CRH2M%2CWS2M%2CALLSKY_SFC_SW_DWN%2CPS%2CPRECTOTCORR&community=AG&latitude=52.6638&longitude=-8.6267&start=20230101&end=20231231&format=JSON&time-standard=UTC",
+  "sha256": "631afba524e0f9ce35aea5fca2ccf56375b0cb71e52b65cc79f7ac3b9de4c95b",
+  "validation_status": "FULL QA PENDING",
+  "spatial_status": "Gridded reference data, not field measurements"
+}

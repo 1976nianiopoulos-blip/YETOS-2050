@@ -80,3 +80,26 @@ Limitations:
 - No hydrological simulation completed.
 - A03 remains BLOCKED.
 - A08 and A10 remain mandatory.
+
+## NASA-POWER-ET0-2023-QA-001
+
+Status: BASIC METEOROLOGICAL QA PASS.
+Retrieval UTC: 2026-11-14T14:00:31.822309+00:00
+Location: 52.6638 N, 8.6267 W (Limerick reference).
+Period: 2023-01-01 to 2023-12-31.
+Time standard: UTC.
+Variables: T2M, T2M_MAX, T2M_MIN, T2MDEW,
+RH2M, WS2M, ALLSKY_SFC_SW_DWN, PS, PRECTOTCORR.
+All 9 variables: 365 days; 0 missing/invalid.
+Units and basic physical bounds: PASS.
+Tmax >= Tmin: PASS.
+Original T2M and precipitation agreement: PASS.
+SHA256: 631afba524e0f9ce35aea5fca2ccf56375b0cb71e52b65cc79f7ac3b9de4c95b
+SHA256 verification: PASS.
+
+Limitations:
+- Gridded NASA meteorology, not field observations.
+- Local station validation pending.
+- ET0 computation not yet implemented.
+- More detailed physical consistency QA pending.
+- A03 BLOCKED; A08 and A10 mandatory.
