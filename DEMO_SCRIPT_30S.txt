@@ -1,0 +1,16 @@
+YETOS 2050 asks a simple question:
+What happens when the same rain meets different soils?
+
+Using NASA POWER historical weather, we built
+a reproducible daily water-balance comparison.
+
+Two hypothetical soils produce different
+water-storage and drainage responses.
+
+We also test a two-month no-rainfall shock.
+
+Our Evidence Passport separates verified calculations
+from assumptions and missing field data.
+
+YETOS is a transparent exploratory prototype,
+not a validated farm recommendation system.

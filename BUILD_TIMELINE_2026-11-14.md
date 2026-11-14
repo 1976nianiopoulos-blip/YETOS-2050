@@ -79,3 +79,10 @@ See BUILD_LOG.md for implementation milestones.
 - Daily and annual A08 conservation checks passed.
 - Scientific results: WB_2023_RESULTS.md.
 - Model remains illustrative; A03 BLOCKED.
+
+## 2026-11-14 ? Streamlit MVP and demo preparation
+
+- Commit d89fed9 published at 2026-11-14T17:47:46+02:00.
+- Three Streamlit tabs visually checked.
+- DEMO_SLIDES.md and DEMO_SCRIPT_30S.txt prepared.
+- Demo publication and NASA submission not yet completed.

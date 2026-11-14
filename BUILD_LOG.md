@@ -12,3 +12,5 @@
 - 2026-11-14 | Chronological project summary: BUILD_TIMELINE_2026-11-14.md (Git timestamps retained).
 
 - 2026-11-14 | WB-2023-SENSITIVITY-RESULTS: 1460 daily rows; A08 PASS; WB_2023_RESULTS.md; not field validated.
+
+- 2026-11-14 | Streamlit MVP commit d89fed9 confirmed; 7-slide demo and narration drafted. Submission pending.
