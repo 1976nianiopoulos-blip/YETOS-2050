@@ -14,3 +14,6 @@
 - 2026-11-14 | WB-2023-SENSITIVITY-RESULTS: 1460 daily rows; A08 PASS; WB_2023_RESULTS.md; not field validated.
 
 - 2026-11-14 | Streamlit MVP commit d89fed9 confirmed; 7-slide demo and narration drafted. Submission pending.
+
+- 2026-11-14T21:52:00+02:00 | RETROSPECTIVE S1 BUILD RECORD: Earlier events occurred 2026-11-14; their exact times are not asserted. User preserved frozen PRE and SHA-256-protected archives, used direct PowerShell installation after ZIP download problems, visually checked the initial Soil_A S1 view, and executed commit 5341016 with successful push to origin/main. S1/rotation tests: 12/12 PASS. Soil_B and parameter-change visual QA remain pending.
+- 2026-11-14T21:52:00+02:00 | STEP 5C: Farmer Priority Selector implementation initiated. Three approved UI-only priorities: Flood protection, Drought resilience, Water efficiency. No scores, rankings, changed hydrological equations, or crop recommendations. Automated and visual QA required before commit.
