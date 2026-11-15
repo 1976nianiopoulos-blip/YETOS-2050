@@ -540,7 +540,7 @@ with tab4:
         "Catalog only. No yield simulation. "
         "No optimal-rotation ranking. No crop-specific ETc. "
         "The 2023 water-balance results are NOT a "
-        "2027-2029 crop simulation."
+        "future crop simulation."
     )
 
     rotation_id = st.selectbox(
@@ -620,6 +620,152 @@ with tab4:
         "windows, crop rooting, Kc and yield are "
         "NOT validated here. Crop-specific water "
         "comparisons remain Evidence Required."
+    )
+
+
+    st.divider()
+    st.subheader("2023 Reference Water Exposure at Sowing Windows")
+    st.caption(
+        "The selected rotation's indicative sowing months are "
+        "matched to the SAME calendar months of NASA POWER 2023. "
+        "This is NOT a future weather forecast or a "
+        "full-season crop simulation."
+    )
+
+    from rotation_water_exposure import (
+        calculate_sowing_window_exposure
+    )
+
+    exposure_scenario = st.selectbox(
+        "Reference weather scenario",
+        options=["Baseline", "S3_drought"],
+        format_func=lambda s: (
+            "2023 Baseline" if s == "Baseline"
+            else "2023 Synthetic S3 - July/August without rain"
+        ),
+        key="rotation_exposure_scenario",
+    )
+
+    try:
+        exposure_a = calculate_sowing_window_exposure(
+            df, rotation_id, first_year,
+            "Soil_A", exposure_scenario
+        )
+        exposure_b = calculate_sowing_window_exposure(
+            df, rotation_id, first_year,
+            "Soil_B", exposure_scenario
+        )
+
+        month_key = "Planning month (not forecast)"
+        crop_key = "Indicative sowing crop(s)"
+        count_key = "2023 model low-Ks proxy days"
+
+        if (
+            not exposure_a[month_key].equals(exposure_b[month_key])
+            or not exposure_a[crop_key].equals(
+                exposure_b[crop_key]
+            )
+        ):
+            raise ValueError(
+                "Inconsistent sowing-window comparison"
+            )
+
+        exposure_view = pd.DataFrame({
+            "Planning month": exposure_a[month_key].to_numpy(),
+            "Indicative crop(s)": exposure_a[crop_key].to_numpy(),
+            "Reference month":
+                exposure_a["Reference month"].to_numpy(),
+            "Soil A - low-Ks days":
+                exposure_a[count_key].to_numpy(),
+            "Soil B - low-Ks days":
+                exposure_b[count_key].to_numpy(),
+        })
+
+        chart_data = exposure_view.set_index(
+            "Planning month"
+        )[
+            ["Soil A - low-Ks days", "Soil B - low-Ks days"]
+        ]
+
+        from rotation_water_exposure import (
+            compare_s3_sowing_window_exposure
+        )
+
+        delta_a = compare_s3_sowing_window_exposure(
+            df, rotation_id, first_year, "Soil_A"
+        )
+        delta_b = compare_s3_sowing_window_exposure(
+            df, rotation_id, first_year, "Soil_B"
+        )
+
+        if not delta_a["Planning month"].equals(
+            delta_b["Planning month"]
+        ):
+            raise ValueError("Soil calendars differ")
+
+        delta_view = pd.DataFrame({
+            "Planning month":
+                delta_a["Planning month"].to_numpy(),
+            "Indicative crop(s)":
+                delta_a["Indicative crop(s)"].to_numpy(),
+            "Reference month":
+                delta_a["Reference month"].to_numpy(),
+            "Soil A - additional low-Ks days":
+                delta_a[
+                    "S3 minus Baseline low-Ks days"
+                ].to_numpy(),
+            "Soil B - additional low-Ks days":
+                delta_b[
+                    "S3 minus Baseline low-Ks days"
+                ].to_numpy(),
+        })
+
+        st.markdown(
+            "**S3 minus Baseline: Additional Low-Ks Proxy Days**"
+        )
+        st.caption(
+            "2023 illustrative model comparison at indicative "
+            "sowing months. Not crop stress or a future forecast."
+        )
+
+        st.bar_chart(
+            delta_view.set_index("Planning month")[
+                [
+                    "Soil A - additional low-Ks days",
+                    "Soil B - additional low-Ks days",
+                ]
+            ]
+        )
+
+        st.dataframe(
+            delta_view,
+            hide_index=True,
+            width="stretch",
+        )
+
+        st.markdown("**Selected reference scenario**")
+
+        st.bar_chart(chart_data)
+        st.dataframe(
+            exposure_view,
+            hide_index=True,
+            use_container_width=True,
+        )
+
+    except (ValueError, KeyError) as error:
+        st.error(
+            "Evidence Required: Cannot display the "
+            "reference-year comparison. "
+            + str(error)
+        )
+
+    st.warning(
+        "A10: Ks_proxy < 1 counts modelled low-Ks days "
+        "using illustrative, crop-independent assumptions. "
+        "These are NOT measured soil deficits, biological "
+        "crop stress, yield losses or rotation rankings. "
+        "Repeated 2023 reference months are NOT future "
+        "crop-season predictions."
     )
 
     with st.expander("Assumptions & Teagasc sources"):

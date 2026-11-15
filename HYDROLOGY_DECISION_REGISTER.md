@@ -218,3 +218,17 @@ Do not claim comparisons have already been completed.
 No imported regional bias correction, unsupported crop
 yield ranking, field runoff prediction or operational advice.
 A03 remains BLOCKED. A08 and A10 remain mandatory.
+
+## H15 - Rotation sowing-window water exposure
+**Recorded:** 2026-11-15T10:46:57+02:00
+**Tracking ID:** ROTATION-S3-EXPOSURE-20261115
+
+**Decision:** Compare the same 2023 reference calendar months within R1-R3 indicative sowing windows under Baseline and synthetic S3, separately for Soil_A and Soil_B.
+
+**Verified:** 23 automated tests passed. For R3 September, S3 minus Baseline is +14 low-Ks proxy days for Soil_A and +18 for Soil_B.
+
+**Interpretation:** These are differences in crop-independent, illustrative model indicators, NOT biological crop stress, actual planting risk, yield loss, or future climate predictions. No rotation is ranked.
+
+**Remaining evidence:** Crop-specific Kc, rooting, phenology, field soil calibration and actual sowing/harvest dates.
+
+**Next:** S2 synthetic extreme rainfall, with daily mass-balance QA and explicit limits on runoff interpretation.
