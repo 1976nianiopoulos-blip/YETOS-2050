@@ -123,3 +123,11 @@ Original input ET0 SHA256: 145bef2395944ebcc1ffba16246f6cc8ac5e05d03e9c25fe6065f
 Derived input status: EXPLORATORY, NOT FIELD VALIDATED.
 Shannon/Moore Park comparison: PLANNED, NOT PERFORMED.
 See HYDROLOGY_DECISION_REGISTER.md H12-H14.
+
+## S2-EXTREME-RAINFALL-20261115 - Source and input provenance
+**Recorded (Europe/Athens):** 2026-11-15T12:06:22+02:00
+
+- **Historical forcing:** Project-verified NASA POWER daily 2023 series, provided by the existing `s1_irrigation.load_verified_weather()` routine.
+- **Synthetic forcing:** User-adjustable extra rain (default +120 mm), applied on one selected 2023 date (default 2023-10-20). Neither NASA measurement nor future climate projection.
+- **Transformation:** Reuse `s1_irrigation.simulate_step()` with Soil_A / Soil_B illustrative assumptions; reference ET0 unchanged.
+- **Outputs and caveats:** 2023 baseline-versus-perturbation water storage, drainage and unretained-water accounting proxies; A08 conservation checked; no physically validated infiltration/runoff/erosion prediction.

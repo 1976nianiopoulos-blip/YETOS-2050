@@ -232,3 +232,15 @@ A03 remains BLOCKED. A08 and A10 remain mandatory.
 **Remaining evidence:** Crop-specific Kc, rooting, phenology, field soil calibration and actual sowing/harvest dates.
 
 **Next:** S2 synthetic extreme rainfall, with daily mass-balance QA and explicit limits on runoff interpretation.
+
+## H16 - S2 synthetic rainfall sensitivity
+**Recorded (Europe/Athens):** 2026-11-15T12:06:22+02:00
+**Tracking ID:** S2-EXTREME-RAINFALL-20261115
+
+**Decision:** Compare an identical synthetic addition to the existing NASA POWER 2023 daily rainfall for Soil_A and Soil_B, preserving reference ET0. The user's chosen sequence of work was rotation exposure, S2, then a conditional 2050 drought demonstration.
+
+**Verified:** 30/30 automated tests passed; 2023-10-20 historical precipitation 30.82 mm. For additions +10/+120/+280 mm the annual *additional unretained-water proxy* is +0.82/+110.82/+270.82 mm (Soil_A), versus +10/+120/+280 mm (Soil_B). A08 daily and annual mass balance PASS. User supplied screenshots of slider, comparisons, and daily storage chart.
+
+**Limits:** A03 field calibration remains BLOCKED. The parameterized soil accounting does NOT estimate observed infiltration rate, actual surface runoff, erosion, flood probability, waterlogging duration, crop damage, or suitability rankings (A10). This is not a future climate projection. The daily-storage series can overlap even when water partitioning differs.
+
+**Next:** Publish tested S2; assess verified climate data availability separately from a purely synthetic drought stress test.

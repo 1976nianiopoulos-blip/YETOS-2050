@@ -35,3 +35,12 @@ The Rotation Explorer links indicative R1-R3 sowing-window months to the same ca
 The S3-minus-Baseline view shows changes in modelled low-`Ks_proxy` days. For R3's September sowing window, the reference comparison gives +14 days (Soil_A) and +18 days (Soil_B).
 
 This is **not crop physiological stress, a field forecast, a crop-yield prediction, or a rotation ranking**. Crop-specific parameters and local field validation remain Evidence Required.
+
+## S2 - Synthetic Extreme Rainfall
+Tracking ID: `S2-EXTREME-RAINFALL-20261115`.
+
+The seventh Streamlit tab adds a hypothetical 0-500 mm rain pulse on a chosen date in the NASA POWER 2023 daily reference series. It compares the same synthetic forcing across two illustrative soils, with historical reference ET0 unchanged. The engine uses existing verified water-balance routines and validates daily and annual A08 numerical conservation.
+
+For 2023-10-20, historical daily reference precipitation is 30.82 mm. With a *synthetic* +120 mm pulse, additional annual unretained-water proxy is 110.82 mm in Soil_A versus 120.00 mm in Soil_B. Visual inspection and 30 regression tests passed.
+
+This is not observed infiltration, measured surface runoff, erosion, flooding, future climate, or crop-specific yield. Local soil calibration remains Evidence Required.

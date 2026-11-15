@@ -12,6 +12,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 from s1_streamlit_view import render_s1
+from s2_streamlit_view import render_s2
 from farmer_priority_view import render_farmer_priorities
 from rotation_catalog import (
     CROPS, ROTATIONS, HISTORY_CHOICES,
@@ -174,13 +175,14 @@ with st.sidebar:
     )
 
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "Evidence Passport",
     "Same Rain. Different Soil.",
     "Drought Shock S3",
     "Rotation Explorer R1-R3",
     "Irrigation Shock S1",
     "Farmer Priorities",
+    "Extreme Rainfall S2",
 ])
 
 
@@ -806,3 +808,7 @@ with tab5:
 # Presentation-only farmer priority lens.
 with tab6:
     render_farmer_priorities(df, meta)
+
+# Independent S2 synthetic-rainfall experiment.
+with tab7:
+    render_s2()
