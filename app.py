@@ -13,6 +13,7 @@ import plotly.graph_objects as go
 import streamlit as st
 from s1_streamlit_view import render_s1
 from s2_streamlit_view import render_s2
+from s2050_streamlit_view import render_2050
 from farmer_priority_view import render_farmer_priorities
 from rotation_catalog import (
     CROPS, ROTATIONS, HISTORY_CHOICES,
@@ -151,6 +152,9 @@ with st.sidebar:
 
     st.subheader("Source")
     st.write("NASA POWER Daily Point, 2023")
+    st.write("NASA NEX-GDDP-CMIP6, 2050")
+    st.caption("MPI-ESM1-2-HR | SSP2-4.5 | Climate precipitation projection")
+    st.caption("2023 POWER and 2050 NEX-GDDP-CMIP6 are distinct sources. No climate-trend inference.")
     st.write("Limerick city reference location")
     st.write("FAO-56 reference ET₀")
     st.caption(
@@ -175,7 +179,7 @@ with st.sidebar:
     )
 
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs([
     "Evidence Passport",
     "Same Rain. Different Soil.",
     "Drought Shock S3",
@@ -183,6 +187,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "Irrigation Shock S1",
     "Farmer Priorities",
     "Extreme Rainfall S2",
+    "Climate 2050 Lens",
 ])
 
 
@@ -812,3 +817,7 @@ with tab6:
 # Independent S2 synthetic-rainfall experiment.
 with tab7:
     render_s2()
+
+# NASA Climate 2050 evidence lens.
+with tab8:
+    render_2050()

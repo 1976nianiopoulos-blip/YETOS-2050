@@ -131,3 +131,35 @@ See HYDROLOGY_DECISION_REGISTER.md H12-H14.
 - **Synthetic forcing:** User-adjustable extra rain (default +120 mm), applied on one selected 2023 date (default 2023-10-20). Neither NASA measurement nor future climate projection.
 - **Transformation:** Reuse `s1_irrigation.simulate_step()` with Soil_A / Soil_B illustrative assumptions; reference ET0 unchanged.
 - **Outputs and caveats:** 2023 baseline-versus-perturbation water storage, drainage and unretained-water accounting proxies; A08 conservation checked; no physically validated infiltration/runoff/erosion prediction.
+
+
+## NASA-NEX-GDDP-CMIP6-2050-PR-001
+Status: SOURCE INTEGRITY AND BASIC QA PASS.
+Dataset: NASA NEX-GDDP-CMIP6, downscaled climate projection.
+Model: MPI-ESM1-2-HR.
+Scenario: SSP2-4.5 (ssp245).
+Member: r1i1p1f1.
+File version: v2.0.
+Variable: pr; units kg m-2 s-1.
+Conversion: daily precipitation mm = pr * 86400.
+Period: 2050-01-01 to 2050-12-31; 365 daily values.
+Requested location: 52.6638 N, 8.6267 W.
+Returned grid point: 52.625 N, 8.625 W.
+Retrieval interface: NASA NCCS THREDDS NCSS station CSV.
+Evidence-passport timestamp: 2026-11-15T10:44:40.6717996Z.
+Source URL: https://ds.nccs.nasa.gov/thredds/ncss/grid/AMES/NEX/GDDP-CMIP6/MPI-ESM1-2-HR/ssp245/r1i1p1f1/pr/pr_day_MPI-ESM1-2-HR_ssp245_r1i1p1f1_gn_2050_v2.0.nc?req=station&var=pr&latitude=52.6638&longitude=-8.6267&time_start=2050-01-01T12:00:00Z&time_end=2050-12-31T12:00:00Z&accept=csv
+Archived CSV SHA256: 9EF5888C7797C84B3C669DB0E252839F7E6BA241B23BA73AF045292039A02220.
+Annual rainfall: 1179.33 mm.
+Maximum daily rainfall: 29.08 mm.
+Days below 1 mm: 144.
+Days at or above 10/15/20/25 mm: 23/5/2/2.
+Driest consecutive 60 days: 2050-04-17 through
+2050-06-15; 119.27 mm.
+Longest consecutive run below 1 mm/day: 12 days.
+Missing/nonfinite/negative precipitation: NONE detected.
+
+Limits: One model, one simulated year and one grid cell.
+Not a weather forecast or independently field validated.
+No future ET0 or future root-zone water balance.
+Not sufficient for a climate trend, flood, erosion,
+soil fertility or crop-yield prediction.

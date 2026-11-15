@@ -244,3 +244,39 @@ A03 remains BLOCKED. A08 and A10 remain mandatory.
 **Limits:** A03 field calibration remains BLOCKED. The parameterized soil accounting does NOT estimate observed infiltration rate, actual surface runoff, erosion, flood probability, waterlogging duration, crop damage, or suitability rankings (A10). This is not a future climate projection. The daily-storage series can overlap even when water partitioning differs.
 
 **Next:** Publish tested S2; assess verified climate data availability separately from a purely synthetic drought stress test.
+
+
+## H17 - Climate 2050 evidence and intergenerational responsibility
+**Recorded (local time):** 2026-11-15T13:09:20+02:00
+**Tracking ID:** CLIMATE-2050-LENS-20261115
+
+**Operator's scientific decision:** Extend YETOS with an
+independent NASA climate-projection evidence lens. Preserve
+the separation between historical NASA POWER 2023 water
+accounting and simulated NEX-GDDP-CMIP6 2050 precipitation.
+
+**Operator's philosophical contribution:** The purpose of
+YETOS is to promote environmental ethics and responsibility
+to future generations. Scientific transparency should help
+farmers assess choices; the prototype does not dictate them.
+
+**Verified:** 365 daily projection records, source CSV SHA256,
+monthly and daily charts, threshold counts and the driest
+60-day interval. All 35 automated tests passed. Streamlit
+display was inspected by the operator.
+
+**2050 results:** 1179.33 mm annual rainfall; 144 days below
+1 mm; 23 days at or above 10 mm; driest 60-day period
+2050-04-17 to 2050-06-15 with 119.27 mm; longest consecutive
+run below 1 mm/day: 12 days.
+
+**Limitations:** One simulated year from one climate model.
+Not a weather forecast. Historical NASA POWER 2023 and
+NEX-GDDP-CMIP6 2050 are not a valid direct climate-trend
+comparison. No future ET0, field-calibrated soil evolution,
+flood, erosion, crop yield, or 10-15-year fertility forecast.
+A03 remains BLOCKED; A08 and A10 retained.
+
+**Decision:** Display conditional evidence and uncertainty.
+Do not claim an inevitable 26-30 percent rainfall reduction,
+soil protection benefit, or flood probability.

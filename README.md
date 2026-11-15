@@ -44,3 +44,25 @@ The seventh Streamlit tab adds a hypothetical 0-500 mm rain pulse on a chosen da
 For 2023-10-20, historical daily reference precipitation is 30.82 mm. With a *synthetic* +120 mm pulse, additional annual unretained-water proxy is 110.82 mm in Soil_A versus 120.00 mm in Soil_B. Visual inspection and 30 regression tests passed.
 
 This is not observed infiltration, measured surface runoff, erosion, flooding, future climate, or crop-specific yield. Local soil calibration remains Evidence Required.
+
+
+## Climate 2050 Lens
+An eighth Streamlit tab uses archived NASA NEX-GDDP-CMIP6
+daily precipitation projections for Limerick (2050,
+MPI-ESM1-2-HR, SSP2-4.5). Source CSV, SHA256 and provenance
+are retained under data/external/.
+
+The prototype passed 35 numerical/regression tests and
+was visually inspected. Tests do not establish local
+meteorological accuracy or field calibration.
+
+Historical NASA POWER 2023 and projected 2050 rainfall
+must not be interpreted as a validated climate trend.
+The 2050 lens does not predict future ET0, crop yields,
+floods, erosion, or 10-15-year soil fertility changes.
+
+## Environmental ethics
+YETOS explores scientific evidence to support farmers'
+own decisions and intergenerational responsibility.
+Science informs choices; future generations inherit
+their consequences.

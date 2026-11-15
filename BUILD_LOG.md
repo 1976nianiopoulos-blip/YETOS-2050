@@ -21,3 +21,12 @@
 - 2026-11-15T10:46:57+02:00 | ROTATION-S3-EXPOSURE-20261115 | User priority: (1) R1-R3 water-exposure comparison, (2) S2 extreme rainfall, (3) conditional 2050 drought if time permits. Rotation module and Streamlit Tab 4 extended. 23 automated tests passed; real-data check: R3, September reference 2023, S3 minus Baseline = +14 model low-Ks days Soil_A and +18 Soil_B. Visual QA confirmed by user before logging. A03 field calibration still blocked; no crop-specific physiological stress or yield prediction. Next: S2 synthetic rainfall.
 
 - 2026-11-15T12:06:22+02:00 | S2-EXTREME-RAINFALL-20261115 | User completed S2 synthetic extreme-rainfall experiment and visually inspected the new seventh Streamlit tab. Historical NASA POWER 2023 reference precipitation on 2023-10-20: 30.82 mm. Added synthetic 10/120/280 mm separately: Soil_A annual unretained-water differences +0.82/+110.82/+270.82 mm, Soil_B +10/+120/+280 mm. 30 tests and A08 checks PASS. The four series in the daily-storage chart overlap for each soil under this setup. Not a field-calibrated infiltration, surface runoff, erosion or flooding model. Next: commit/push; evaluate evidence for any future climate scenario.
+
+
+- 2026-11-15T13:09:20+02:00 | CLIMATE-2050-LENS: Operator retrieved and saved
+  365 daily NASA NEX-GDDP-CMIP6 2050 precipitation records;
+  recorded SHA256 and grid coordinates in the Evidence Passport.
+  Independent PowerShell and Python statistics agreed.
+  Climate 2050 Streamlit tab visually inspected; 35/35 tests
+  PASS. H17 records the operator's environmental-ethics
+  decisions and scientific limits. Commit #17 pending.

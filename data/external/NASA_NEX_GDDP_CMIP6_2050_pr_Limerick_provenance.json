@@ -1,0 +1,28 @@
+{
+    "project":  "YETOS 2050",
+    "source":  "NASA NEX-GDDP-CMIP6",
+    "model":  "MPI-ESM1-2-HR",
+    "scenario":  "ssp245",
+    "ensemble_member":  "r1i1p1f1",
+    "dataset_version":  "v2.0",
+    "variable":  "pr",
+    "variable_units":  "kg m-2 s-1",
+    "daily_conversion":  "mm/day = pr * 86400",
+    "year":  2050,
+    "records":  365,
+    "requested_latitude":  52.6638,
+    "requested_longitude":  -8.6267,
+    "grid_latitude":  52.625,
+    "grid_longitude":  -8.625,
+    "source_url":  "https://ds.nccs.nasa.gov/thredds/ncss/grid/AMES/NEX/GDDP-CMIP6/MPI-ESM1-2-HR/ssp245/r1i1p1f1/pr/pr_day_MPI-ESM1-2-HR_ssp245_r1i1p1f1_gn_2050_v2.0.nc?req=station\u0026var=pr\u0026latitude=52.6638\u0026longitude=-8.6267\u0026time_start=2050-01-01T12:00:00Z\u0026time_end=2050-12-31T12:00:00Z\u0026accept=csv",
+    "csv_sha256":  "9EF5888C7797C84B3C669DB0E252839F7E6BA241B23BA73AF045292039A02220",
+    "documented_utc":  "2026-11-15T10:44:40.6717996Z",
+    "evidence_class":  "Climate model projection",
+    "limitations":  [
+                        "One climate model and one simulated year",
+                        "Not a weather forecast",
+                        "Not a validated future flood or erosion prediction",
+                        "No future ET0 or future soil-state simulation",
+                        "Cannot establish climate change trends from this year alone"
+                    ]
+}
