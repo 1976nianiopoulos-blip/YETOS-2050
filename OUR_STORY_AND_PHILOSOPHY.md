@@ -70,7 +70,7 @@ The soil scenarios are illustrative, not field-calibrated. The project does not 
 
 ## The people, the tools and the pictures
 
-The project's question, values, research direction, visual direction, scientific decisions and final judgment were led by the human team. We used AI assistance for literature discovery, critical review, writing, programming support, testing guidance and **AI-generated visual artwork**. Research tools included Perplexity, Consensus, Elicit, NotebookLM, Gemini and ChatGPT; DeepSeek was consulted briefly for exploratory critique, with errors identified, and was not accepted as independent scientific evidence or implemented code. AI assistance does not constitute a NASA partnership or independent scientific validation.
+The project's question, values, research direction, visual direction, scientific decisions and final judgment were led by the human team. We used AI assistance for literature discovery, critical review, writing, programming support, testing guidance and **AI-generated visual artwork**. Research and development tools included Perplexity, NotebookLM, Consensus, Elicit, Gemini and ChatGPT. Their outputs were reviewed critically by the human team and were not treated as independent scientific evidence. AI assistance does not constitute a NASA partnership or independent scientific validation.
 
 The **seven demonstration slides** contain AI-generated, symbolic imagery, not photographs of actual study plots or team members, and tablet screens are artistic illustrations rather than literal application screenshots. References within the illustrations to NASA missions such as SMAP or GRACE are conceptual only: the **data sources actually used in the current prototype are NASA POWER and NASA NEX-GDDP-CMIP6**. The slides are marked *AI GENERATED*.
 
@@ -96,4 +96,3 @@ We cannot choose every storm, every drought, or the climate our children will fa
 - [UNESCO — Gadaa system of the Oromo](https://ich.unesco.org/en/RL/gadaa-system-an-indigenous-democratic-socio-political-system-of-the-oromo-people-01164)
 - Dasta Alamayo (2021), *Safuu: The indigenous Oromo moral thought*, DOI: <https://doi.org/10.5897/JPC2019.0046>
 
-**Public disclosure boundary:** This narrative intentionally contains no private health information, employment applications, possible appointments or private relocation and farm plans.

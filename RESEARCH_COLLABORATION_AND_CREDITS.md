@@ -15,7 +15,6 @@ the workflow and made the final scientific decisions.
 He is an Agricultural Sciences student at Aristotle
 University of Thessaloniki, with a prior Accounting
 degree and training in logistics and resource management.
-
 His son Dimitris is a second-year Spatial Planning and
 Development Engineering student at the same university.
 Specific unverified technical contributions are not claimed.
@@ -34,10 +33,9 @@ and the Oromo Safuu/Gadaa ethical traditions.
 
 These influences are design motivations, not physical
 model inputs or proof of scientific predictions.
-
 No private TelosX code is incorporated.
 
-## Multi-AI research collaboration
+## AI tools used for research, evidence review and development
 
 Perplexity AI:
 Extensive discovery of Irish soil literature, historical
@@ -58,11 +56,6 @@ and application of the established 28-rule framework.
 
 Gemini:
 Additional analytical assistance and alternative proposals.
-
-DeepSeek (limited exploratory consultation):
-Briefly consulted for independent critique. Feedback was
-checked, with errors identified; it was not treated as
-independent scientific evidence or an adopted implementation.
 
 ChatGPT:
 Technical guidance, scientific synthesis, Python and
