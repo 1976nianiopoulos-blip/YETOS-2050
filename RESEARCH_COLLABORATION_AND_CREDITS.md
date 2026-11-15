@@ -59,9 +59,10 @@ and application of the established 28-rule framework.
 Gemini:
 Additional analytical assistance and alternative proposals.
 
-DeepSeek:
-Alternative scientific and technical assessments,
-reviewed before acceptance or rejection.
+DeepSeek (limited exploratory consultation):
+Briefly consulted for independent critique. Feedback was
+checked, with errors identified; it was not treated as
+independent scientific evidence or an adopted implementation.
 
 ChatGPT:
 Technical guidance, scientific synthesis, Python and

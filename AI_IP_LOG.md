@@ -33,3 +33,6 @@ No private TelosX code was incorporated.
 
 ## 2026-11-15T11:51:00+00:00 - Multi-AI attribution addendum
 Human-led research and development contributions documented in RESEARCH_COLLABORATION_AND_CREDITS.md. Historical PRE records are unchanged.
+
+## 2026-11-15T15:16:18+00:00 - AI attribution clarification
+The earlier DeepSeek credits description overstated its contribution. Its use was limited to exploratory critique. Errors were identified; its feedback was not adopted as independent evidence or implemented code. The historical usage record is preserved.

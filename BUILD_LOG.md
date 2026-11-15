@@ -32,3 +32,5 @@
   decisions and scientific limits. Commit #17 pending.
 
 - 2026-11-15T11:51:00+00:00 | Multi-AI research attribution and human leadership recorded. Commit #18 pending.
+
+- 2026-11-15T15:16:18+00:00 | Corrected DeepSeek attribution to limited exploratory consultation. No scientific model, data or code changes.
