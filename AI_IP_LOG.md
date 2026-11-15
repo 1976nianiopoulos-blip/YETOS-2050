@@ -30,3 +30,6 @@ framing of intergenerational environmental responsibility.
 DeepSeek feedback was critically reviewed; unsupported
 climate and flood claims were not adopted.
 No private TelosX code was incorporated.
+
+## 2026-11-15T11:51:00+00:00 - Multi-AI attribution addendum
+Human-led research and development contributions documented in RESEARCH_COLLABORATION_AND_CREDITS.md. Historical PRE records are unchanged.

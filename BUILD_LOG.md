@@ -30,3 +30,5 @@
   Climate 2050 Streamlit tab visually inspected; 35/35 tests
   PASS. H17 records the operator's environmental-ethics
   decisions and scientific limits. Commit #17 pending.
+
+- 2026-11-15T11:51:00+00:00 | Multi-AI research attribution and human leadership recorded. Commit #18 pending.
